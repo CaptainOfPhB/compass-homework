@@ -1,0 +1,35 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path');
+
+module.exports = {
+  mode: 'development',
+  entry: './src/entry.tsx',
+  devtool: "inline-source-map",
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js'
+  },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js'],
+    alias: {
+      react: path.resolve('node_modules', 'react'),
+      'react-dom': path.resolve('node_modules', 'react-dom')
+    }
+  },
+  module: {
+    rules: [{
+      test: /\.css$/,
+      use: [
+        {loader: 'style-loader'},
+        {loader: 'css-loader'}
+      ]
+    }, {
+      test: /\.tsx?$/,
+      loader: 'ts-loader',
+      exclude: /node_modules/
+    }]
+  },
+  plugins: [
+    new HtmlWebpackPlugin()
+  ]
+}

@@ -1,3 +1,53 @@
-/* TODO */
-.MultiCheck {
+.multi-check {
+  min-width: 325px;
+  display: inline-block;
+  flex-direction: column;
+}
+
+.multi-check-label {
+  padding: 5px 10px;
+  background: rgba(128, 128, 128, .3);
+}
+
+.multi-check-options-outer {
+  padding: 7px 10px;
+  background: #f7f7f9;
+}
+
+.multi-check-options-inner {
+  display: flex;
+  background: white;
+  border-radius: 3px;
+  border: 1px solid #e6e6e6;
+}
+
+.multi-check-column {
+  min-width: 150px;
+  padding: 5px 10px;
+}
+
+.multi-check-column:not(:first-child) {
+  margin-left: 5px;
+}
+
+.multi-check-option {
+  display: flex;
+  align-items: center;
+  vertical-align: text-bottom;
+}
+
+.multi-check-option input {
+  cursor: pointer;
+}
+
+.multi-check-option label {
+  flex-grow: 1;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.multi-check input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  accent-color: black;
 }

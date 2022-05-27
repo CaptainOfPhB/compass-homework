@@ -1,0 +1,16 @@
+{
+  "verbose": true,
+  "preset": "ts-jest",
+  "testEnvironment": "jest-environment-jsdom",
+  "globals": {
+    "ts-jest": {
+      "tsconfig": "tsconfig.json"
+    }
+  },
+  "moduleNameMapper": {
+    "\\.(css|less)$": "identity-obj-proxy"
+  },
+  "setupFilesAfterEnv": [
+    "<rootDir>/setupTests.ts"
+  ]
+}

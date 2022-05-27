@@ -32,7 +32,7 @@ export type Props = {
   onRender: () => void
 }
 
-export const MultiCheck: FC<Props> = (props) => {
+export const MultiCheck: FC<Props> = React.memo((props) => {
   const {onRender} = props;
 
   {
@@ -162,4 +162,4 @@ export const MultiCheck: FC<Props> = (props) => {
       }
     </div>
   );
-};
+});

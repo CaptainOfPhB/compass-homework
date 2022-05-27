@@ -82,7 +82,7 @@ export const MultiCheck: FC<Props> = (props) => {
     return layout.map((count, column) => {
       const options = finalOptions.splice(0, count);
       return (
-        <div key={`column-${column}`} className='multi-check-column'>
+        <div key={`column-${column}`} className='multi-check-column' data-testid='multi-check-column'>
           {/* The "Select All" option */}
           {column === 0
             ? (
@@ -91,6 +91,7 @@ export const MultiCheck: FC<Props> = (props) => {
                   type='checkbox'
                   id='multi-check-select-all'
                   name='multi-check-select-all'
+                  role='multi-check-select-all'
                   checked={selectAllChecked}
                   onChange={onSelectAllChange}
                 />
@@ -107,9 +108,11 @@ export const MultiCheck: FC<Props> = (props) => {
                   id={option.label}
                   checked={checked}
                   name={option.label}
+                  data-testid={option.label}
+                  role='multi-check-option-checkbox'
                   onChange={e => onCheckboxChange(option, e)}
                 />
-                <label htmlFor={option.label}>{option.label}</label>
+                <label htmlFor={option.label} data-testid='multi-check-option-label'>{option.label}</label>
               </div>
             );
           })}
